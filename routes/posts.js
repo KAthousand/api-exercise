@@ -1,7 +1,7 @@
 // import express
 const { Router } = require("express");
 // import controllers/products
-const controllers = require("../controllers/products");
+const controllers = require("../controllers/posts");
 
 // enstantiating router
 const router = Router();
@@ -10,10 +10,10 @@ const router = Router();
 // table of contents for routes.
 // CRUD
 
-router.get("/posts", controllers.getProducts);
-router.get("/posts/:id", controllers.getProduct);
-router.post("/posts", controllers.createProduct);
-router.put("/posts/:id", controllers.updateProduct);
-router.delete("/posts/:id", controllers.deleteProduct);
+router.get("/posts", controllers.getPosts);
+router.get("/products/:id", controllers.getPost);
+router.post("/posts", controllers.createPost);
+router.put("/posts/:id", controllers.updatePost);
+router.delete("/posts/:id", controllers.deletePost);
 
 module.exports = router;
