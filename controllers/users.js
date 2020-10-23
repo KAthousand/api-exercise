@@ -37,7 +37,7 @@ const createUser = async (req, res) => {
   }
 };
 
-const updateProduct = async (req, res) => {
+const updateUser = async (req, res) => {
   const { id } = req.params;
   await User.findByIdAndUpdate(id, req.body, { new: true }, (error, user) => {
     if (error) {
@@ -50,7 +50,7 @@ const updateProduct = async (req, res) => {
   });
 };
 
-const deleteProduct = async (req, res) => {
+const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
     const deleted = await User.findByIdAndDelete(id);

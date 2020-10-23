@@ -37,7 +37,7 @@ const createPost = async (req, res) => {
   }
 };
 
-const updateProduct = async (req, res) => {
+const updatePost = async (req, res) => {
   const { id } = req.params;
   await Post.findByIdAndUpdate(id, req.body, { new: true }, (error, post) => {
     if (error) {
@@ -50,7 +50,7 @@ const updateProduct = async (req, res) => {
   });
 };
 
-const deleteProduct = async (req, res) => {
+const deletePost = async (req, res) => {
   try {
     const { id } = req.params;
     const deleted = await Post.findByIdAndDelete(id);
