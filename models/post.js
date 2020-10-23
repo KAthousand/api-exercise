@@ -11,15 +11,4 @@ const Post = new Schema(
   { timestamps: true }
 );
 
-// const User = new Schema(
-//   {
-//     title: { type: String, required: true },
-//     imgURL: { type: String, required: true },
-//     content: { type: String, required: true },
-//     author: { type: String, required: true },
-//   },
-//   { timestamps: true }
-// );
-
 module.exports = mongoose.model("posts", Post);
-// module.exports = mongoose.model("users", User);
