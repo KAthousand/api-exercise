@@ -36,7 +36,7 @@ app.get("/posts/:id", async (req, res) => {
   }
 });
 
-app.post("/post", async (req, res) => {
+app.post("/posts", async (req, res) => {
   try {
     const post = await new Post(req.body);
     await post.save();
