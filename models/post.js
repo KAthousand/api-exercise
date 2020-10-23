@@ -6,20 +6,9 @@ const Post = new Schema(
     title: { type: String, required: true },
     imgURL: { type: String, required: true },
     content: { type: String, required: true },
-    author: { type: String, required: true },
+    userId: { type: Schema.Types.ObjectId, ref: "users" },
   },
   { timestamps: true }
 );
 
-// const User = new Schema(
-//   {
-//     title: { type: String, required: true },
-//     imgURL: { type: String, required: true },
-//     content: { type: String, required: true },
-//     author: { type: String, required: true },
-//   },
-//   { timestamps: true }
-// );
-
 module.exports = mongoose.model("posts", Post);
-// module.exports = mongoose.model("users", User);

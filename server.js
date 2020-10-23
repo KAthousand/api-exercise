@@ -25,12 +25,32 @@ app.get("/posts", async (req, res) => {
   }
 });
 
+app.get("/users", async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.get("/posts/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const post = await Post.findById(id);
     if (!post) throw Error("Post not found");
     res.json(post);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get("/users/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(id).populate("posts");
+    if (!user) throw Error("Post not found");
+    res.json(user);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
