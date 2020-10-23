@@ -28,7 +28,7 @@ app.get("/posts", async (req, res) => {
 app.get("/posts/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const post = await Post.findbyId(id);
+    const post = await Post.findById(id);
     if (!post) throw Error("Post not found");
     res.json(post);
   } catch (error) {
